@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_global_benefits",
+  "info": {
+    "displayName": "benefit"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

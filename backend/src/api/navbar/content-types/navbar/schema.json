@@ -1,0 +1,39 @@
+{
+  "kind": "singleType",
+  "collectionName": "navbars",
+  "info": {
+    "singularName": "navbar",
+    "pluralName": "navbars",
+    "displayName": "Navbar"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "name_saas": {
+      "type": "string"
+    },
+    "menu": {
+      "type": "component",
+      "component": "global.item-text",
+      "repeatable": true
+    },
+    "link_sign_in": {
+      "type": "string"
+    },
+    "link_sign_up": {
+      "type": "string"
+    }
+  }
+}

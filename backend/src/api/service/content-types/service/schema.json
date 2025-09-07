@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "services",
+  "info": {
+    "singularName": "service",
+    "pluralName": "services",
+    "displayName": "Service"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "price": {
+      "type": "string"
+    },
+    "price_suffix": {
+      "type": "string"
+    },
+    "benefits": {
+      "type": "component",
+      "component": "global.benefit",
+      "repeatable": true
+    },
+    "link_button": {
+      "type": "string"
+    },
+    "isPopular": {
+      "type": "boolean",
+      "default": false
+    },
+    "isStartFree": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

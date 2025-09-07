@@ -1,0 +1,51 @@
+{
+  "kind": "singleType",
+  "collectionName": "footers",
+  "info": {
+    "singularName": "footer",
+    "pluralName": "footers",
+    "displayName": "Footer"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "name_saas": {
+      "type": "string"
+    },
+    "description_saas": {
+      "type": "text"
+    },
+    "products": {
+      "type": "component",
+      "component": "global.item-text",
+      "repeatable": true
+    },
+    "company": {
+      "type": "component",
+      "component": "global.item-text",
+      "repeatable": true
+    },
+    "media_social": {
+      "type": "component",
+      "component": "global.item-logo",
+      "repeatable": true
+    },
+    "legal_link": {
+      "type": "component",
+      "component": "global.item-text",
+      "repeatable": true
+    }
+  }
+}

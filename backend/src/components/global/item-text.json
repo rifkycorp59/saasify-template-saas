@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_global_item_texts",
+  "info": {
+    "displayName": "item-text"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

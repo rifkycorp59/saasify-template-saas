@@ -1,0 +1,48 @@
+{
+  "kind": "singleType",
+  "collectionName": "heroes",
+  "info": {
+    "singularName": "hero",
+    "pluralName": "heroes",
+    "displayName": "Hero"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "link_get_started": {
+      "type": "string"
+    },
+    "link_demo": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "rate_number": {
+      "type": "string"
+    },
+    "user_number": {
+      "type": "string"
+    },
+    "advantages": {
+      "type": "component",
+      "component": "global.advantage",
+      "repeatable": true
+    }
+  }
+}

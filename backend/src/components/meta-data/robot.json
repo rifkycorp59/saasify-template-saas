@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_meta_data_robots",
+  "info": {
+    "displayName": "robot"
+  },
+  "options": {},
+  "attributes": {
+    "index": {
+      "type": "boolean",
+      "default": false
+    },
+    "follow": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "config": {}
+}

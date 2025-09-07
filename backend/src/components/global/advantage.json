@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_global_advantages",
+  "info": {
+    "displayName": "advantage"
+  },
+  "options": {},
+  "attributes": {
+    "highlight": {
+      "type": "string"
+    },
+    "advantage": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}
