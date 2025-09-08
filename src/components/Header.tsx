@@ -1,12 +1,12 @@
-'use client'
+"use client";
 
-import { Button } from "@/components/ui/button"
-import { ThemeToggle } from "@/components/ThemeToggle"
-import { Menu, X } from "lucide-react"
-import { useState } from "react"
+import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/ThemeToggle";
+import { Menu, X } from "lucide-react";
+import { useState } from "react";
 
 export function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -18,16 +18,28 @@ export function Header() {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          <a href="#features" className="text-muted-foreground hover:text-foreground transition-smooth">
+          <a
+            href="#features"
+            className="text-muted-foreground hover:text-foreground transition-smooth"
+          >
             Features
           </a>
-          <a href="#testimonials" className="text-muted-foreground hover:text-foreground transition-smooth">
+          <a
+            href="#testimonials"
+            className="text-muted-foreground hover:text-foreground transition-smooth"
+          >
             Testimonials
           </a>
-          <a href="#pricing" className="text-muted-foreground hover:text-foreground transition-smooth">
+          <a
+            href="#pricing"
+            className="text-muted-foreground hover:text-foreground transition-smooth"
+          >
             Pricing
           </a>
-          <a href="#faq" className="text-muted-foreground hover:text-foreground transition-smooth">
+          <a
+            href="#faq"
+            className="text-muted-foreground hover:text-foreground transition-smooth"
+          >
             FAQ
           </a>
         </nav>
@@ -36,7 +48,9 @@ export function Header() {
           <ThemeToggle />
           <div className="hidden md:flex items-center space-x-2">
             <Button variant="ghost">Sign In</Button>
-            <Button variant="hero" size="sm">Get Started</Button>
+            <Button variant="hero" size="sm">
+              Get Started
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -46,7 +60,11 @@ export function Header() {
             className="md:hidden"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            {isMenuOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
+            {isMenuOpen ? (
+              <X className="h-4 w-4" />
+            ) : (
+              <Menu className="h-4 w-4" />
+            )}
           </Button>
         </div>
       </div>
@@ -55,25 +73,41 @@ export function Header() {
       {isMenuOpen && (
         <div className="md:hidden border-t bg-background">
           <nav className="container mx-auto px-10 py-4 space-y-4">
-            <a href="#features" className="block text-muted-foreground hover:text-foreground transition-smooth">
-              Features
-            </a>
-            <a href="#testimonials" className="block text-muted-foreground hover:text-foreground transition-smooth">
-              Testimonials
-            </a>
-            <a href="#pricing" className="block text-muted-foreground hover:text-foreground transition-smooth">
-              Pricing
-            </a>
-            <a href="#faq" className="block text-muted-foreground hover:text-foreground transition-smooth">
-              FAQ
-            </a>
+            <div className="flex flex-col space-y-4">
+              <a
+                href="#features"
+                className="block text-muted-foreground hover:text-foreground transition-smooth"
+              >
+                Features
+              </a>
+              <a
+                href="#testimonials"
+                className="block text-muted-foreground hover:text-foreground transition-smooth"
+              >
+                Testimonials
+              </a>
+              <a
+                href="#pricing"
+                className="block text-muted-foreground hover:text-foreground transition-smooth"
+              >
+                Pricing
+              </a>
+              <a
+                href="#faq"
+                className="block text-muted-foreground hover:text-foreground transition-smooth"
+              >
+                FAQ
+              </a>
+            </div>
             <div className="flex flex-col space-y-2 pt-4 border-t">
-              <Button variant="ghost" className="dark:text-white">Sign In</Button>
-              <Button variant="hero" >Get Started</Button>
+              <Button variant="ghost" className="dark:text-white">
+                Sign In
+              </Button>
+              <Button variant="hero">Get Started</Button>
             </div>
           </nav>
         </div>
       )}
     </header>
-  )
+  );
 }
