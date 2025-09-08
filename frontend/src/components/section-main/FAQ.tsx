@@ -7,18 +7,28 @@ import {
 import { Button } from "@/components/ui/button";
 import { marked } from "marked";
 
-import { GetDataFAQ, GetDataHeroSection } from "@/lib/fetch";
-import { FAQ, HeroSection } from "@/lib/interface";
+import { GetDataFAQ, GetDataHeroSection, GetDataGLobal } from "@/lib/fetch";
+import { FAQ, HeroSection, Global } from "@/lib/interface";
+
+interface LinkCta {
+  link_contact_sale: string;
+  link_sign_in: string;
+  link_sign_up: string;
+  link_free_trial: string;
+}
 
 export default async function FAQSection() {
-  const [dataFAQ, dataHero] = await Promise.all([
+  const [dataFAQ, dataHero, dataUrl] = await Promise.all([
     GetDataFAQ(),
     GetDataHeroSection(),
+    GetDataGLobal(),
   ]);
 
   const dataHeroFAQ: HeroSection[] = dataHero.filter(
     (item: HeroSection) => item.name === "FAQ"
   );
+
+  const urlCta = dataUrl as LinkCta;
   return (
     <section id="faq" className="py-16 lg:py-24">
       <div className="container mx-auto px-10">
@@ -74,9 +84,11 @@ export default async function FAQSection() {
 
         <div className="text-center mt-12">
           <p className="text-muted-foreground mb-4">Still have questions?</p>
-          <Button variant="hero" className="dark:text-white">
-            Contact Support
-          </Button>
+          <a href={urlCta.link_contact_sale}>
+            <Button variant="hero" className="dark:text-white cursor-pointer">
+              Contact Support
+            </Button>
+          </a>
         </div>
       </div>
     </section>

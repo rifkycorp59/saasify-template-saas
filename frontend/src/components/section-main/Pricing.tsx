@@ -9,18 +9,32 @@ import {
 import { Check, Star } from "lucide-react";
 import { marked } from "marked";
 
-import { GetDataServices, GetDataHeroSection } from "@/lib/fetch";
-import { Services, HeroSection } from "@/lib/interface";
+import {
+  GetDataServices,
+  GetDataHeroSection,
+  GetDataGLobal,
+} from "@/lib/fetch";
+import { Services, HeroSection, Global } from "@/lib/interface";
+
+interface LinkCta {
+  link_contact_sale: string;
+  link_sign_in: string;
+  link_sign_up: string;
+  link_free_trial: string;
+}
 
 export default async function Pricing() {
-  const [dataService, dataHero] = await Promise.all([
+  const [dataService, dataHero, dataUrl] = await Promise.all([
     GetDataServices(),
     GetDataHeroSection(),
+    GetDataGLobal(),
   ]);
 
   const dataHeroPricing: HeroSection[] = dataHero.filter(
     (item: HeroSection) => item.name === "Pricing"
   );
+
+  const urlCta = dataUrl as LinkCta;
   return (
     <section id="pricing" className="py-16 lg:py-24 bg-muted/30">
       <div className="container mx-auto px-10">
@@ -91,13 +105,21 @@ export default async function Pricing() {
                   ))}
                 </ul>
 
-                <Button
-                  className="w-full dark:text-white"
-                  variant={plan.isStartFree ? "hero" : "outline"}
-                  size="lg"
+                <a
+                  href={
+                    plan.isStartFree
+                      ? urlCta.link_free_trial
+                      : urlCta.link_sign_up
+                  }
                 >
-                  {plan.isStartFree ? "Start Free Trial" : "Get Started"}
-                </Button>
+                  <Button
+                    className="w-full dark:text-white cursor-pointer"
+                    variant={plan.isStartFree ? "hero" : "outline"}
+                    size="lg"
+                  >
+                    {plan.isStartFree ? "Start Free Trial" : "Get Started"}
+                  </Button>
+                </a>
               </CardContent>
             </Card>
           ))}
@@ -107,9 +129,11 @@ export default async function Pricing() {
           <p className="text-muted-foreground mb-4">
             All plans include a 14-day free trial. No credit card required.
           </p>
-          <Button variant="ghost" className="dark:text-white">
-            Need a custom plan? Contact Sales →
-          </Button>
+          <a href={urlCta.link_contact_sale}>
+            <Button variant="ghost" className="dark:text-white cursor-pointer">
+              Need a custom plan? Contact Sales →
+            </Button>
+          </a>
         </div>
       </div>
     </section>

@@ -27,7 +27,9 @@ export default async function HeroSection() {
                   <span className="ml-2">Introducing the future of SaaS</span>
                 </div>
                 <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight">
-                 <div dangerouslySetInnerHTML={{__html : marked(data.title)}}/>
+                  <div
+                    dangerouslySetInnerHTML={{ __html: marked(data.title) }}
+                  />
                 </h1>
                 <p className="text-xl text-muted-foreground max-w-2xl">
                   {data.description}
@@ -35,26 +37,26 @@ export default async function HeroSection() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button
-                  variant="hero"
-                  size="xl"
-                  className="group dark:text-white"
-                >
-                  <a href={data.link_get_started} className="flex items-center">
+                <a href={data.link_get_started} className="flex items-center">
+                  <Button
+                    variant="hero"
+                    size="xl"
+                    className="group dark:text-white cursor-pointer"
+                  >
                     Get Started Free
                     <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                  </a>
-                </Button>
-                <Button
-                  variant="outline"
-                  size="xl"
-                  className="group bg-gradient"
-                >
-                  <a href={data.link_demo} className="flex items-center">
+                  </Button>
+                </a>
+                <a href={data.link_demo} className="flex items-center">
+                  <Button
+                    variant="outline"
+                    size="xl"
+                    className="group bg-gradient cursor-pointer"
+                  >
                     <Play className="mr-2 h-4 w-4" />
                     Watch Demo
-                  </a>
-                </Button>
+                  </Button>
+                </a>
               </div>
 
               <div className="flex items-center space-x-8 text-sm text-muted-foreground">

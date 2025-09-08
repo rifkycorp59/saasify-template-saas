@@ -47,10 +47,14 @@ export default function HeaderContent({ data }: NavbarProps) {
         <div className="flex items-center space-x-4">
           <ThemeToggle />
           <div className="hidden md:flex items-center space-x-2">
-            <Button variant="ghost">Sign In</Button>
-            <Button variant="hero" size="sm">
-              Get Started
-            </Button>
+            <a href={data.link_sign}>
+              <Button variant="ghost" className="cursor-pointer">Sign In</Button>
+            </a>
+            <a href={data.link_sign_up}>
+              <Button variant="hero" size="sm" className="cursor-pointer">
+                Get Started
+              </Button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -73,6 +77,7 @@ export default function HeaderContent({ data }: NavbarProps) {
       {isMenuOpen && (
         <div className="md:hidden border-t bg-background">
           <nav className="container mx-auto px-10 py-4 space-y-4">
+            <div className="flex flex-col items-center space-y-4">
             {data.menu.map((item, index) => (
               <a
                 key={index}
@@ -82,6 +87,7 @@ export default function HeaderContent({ data }: NavbarProps) {
                 {item.name}
               </a>
             ))}
+            </div>
             <div className="flex flex-col space-y-2 pt-4 border-t">
               <Button variant="ghost" className="dark:text-white">
                 <a href={data.link_sign}>Sign In</a>
