@@ -1,36 +1,222 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 SaaSify - Premium SaaS Landing Page Template
 
-## Getting Started
+A modern, responsive, and conversion-optimized landing page template built with Next.js 15 and TypeScript. Perfect for SaaS startups, tech companies, and digital products looking to make a powerful first impression.
 
-First, run the development server:
+## ✨ Features
+
+- **🎨 Modern Design** - Clean, professional, and conversion-focused design
+- **📱 Fully Responsive** - Optimized for all devices and screen sizes
+- **⚡ Lightning Fast** - Built with Next.js 15 and optimized for performance
+- **🔍 SEO Optimized** - Pre-configured meta tags and structured data
+- **🎯 Conversion Ready** - Strategic CTA placement and user flow optimization
+- **🌙 Dark Mode Support** - Toggle between light and dark themes
+- **🛠 Easy to Customize** - Well-structured code and comprehensive documentation
+
+## 🛠 Tech Stack
+
+- **Framework:** Next.js 15 (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **Font:** Sans Serif
+- **Icons:** Lucide React
+- **Animations:** Tailwind CSS
+
+## 📦 What's Included
+
+- Hero section with compelling headlines
+- Features showcase with icons and descriptions
+- Pricing tables with multiple tiers
+- Customer testimonials carousel
+- FAQ section with expandable items
+- Footer with social links and navigation
+- 404 error page
+
+## 🚀 Quick Start
+
+### Prerequisites
+
+- Node.js 18+ installed
+- npm, yarn, pnpm, or bun package manager
+
+### Installation
+
+1. **Clone or download the template**
+
+   ```bash
+   # If you have access to the repository
+   git clone [repository-url]
+   cd saasify
+   ```
+
+2. **Install dependencies**
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+   npm install
+   # or
+   yarn install
+   # or
+   pnpm install
+   # or
+   bun install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. **Start the development server**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+   npm run dev
+   # or
+   yarn dev
+   # or
+   pnpm dev
+   # or
+   bun dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. **Open your browser**
+   Navigate to [http://localhost:3000](http://localhost:3000) to see your landing page.
 
-## Learn More
+## ⚙️ Customization
 
-To learn more about Next.js, take a look at the following resources:
+### 1. Update Metadata Configuration
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Edit `app/layout.tsx` to update your site information:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```typescript
+export const metadata: Metadata = {
+  metadataBase: new URL("http://localhost:3000"),
+  applicationName: "SaaSify",
+  referrer: "origin-when-cross-origin",
+  title: {
+    default: "SaaSify",
+    template: `%s | ${"SaaSify"}`,
+  },
+  // Other Thing
+};
+```
 
-## Deploy on Vercel
+### 2. Customize Colors and Branding
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Modify `app/global.css` to match your brand colors:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```javascript
+:root {
+  /* Core background and text colors */
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(222, 13%, 11%);
+
+  /* Card backgrounds */
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(222, 13%, 11%);
+
+  --berhasil: hsl(142, 76%, 36%);
+
+  /* Popover backgrounds */
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(222, 13%, 11%);
+
+  /* Primary brand colors - Deep blue/purple gradient */
+  --primary: hsl(235, 69%, 61%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --primary-glow: hsl(248, 73%, 69%);
+  // Other Thing
+}
+```
+
+### 3. Update Content
+
+- Edit components in `/components` folder
+- Modify page content in `/app` directory
+- Update images in `/public` folder
+
+## 📁 Project Structure
+
+```
+saasify/
+├── public/              # Static assets (images, icons, etc.)
+├── src/
+    ├── app/                 # Next.js 15 App Router pages
+    ├── components/          # Reusable React components
+    ├── lib/                 # Utility functions and configurations
+    ├── hooks/               # Hooks Function
+    └── ...config files
+```
+
+## 🎨 Customization Guide
+
+### Changing Colors
+
+All colors are defined in `app/global.css`. Update the primary, secondary, and accent colors to match your brand.
+
+### Adding New Sections
+
+1. Create a new component in `/components`
+2. Import and add it to your desired page
+3. Update the navigation if needed
+
+### Modifying Content
+
+- **Hero Section:** `/components/section-main/Hero.tsx`
+- **Features:** `/components/section-main/Features.tsx`
+- **Pricing:** `/components/section-main/Pricing.tsx`
+- **Testimonials:** `/components/section-main/Testimonials.tsx`
+- **CTA:** `/components/section-main/CTA.tsx`
+- **FAQ:** `/components/section-main/FAQ.tsx`
+- **Header:** `/components/Header.tsx`
+- **Footer:** `/components/Footer.tsx`
+
+## 📱 Responsive Breakpoints
+
+- **Mobile:** < 768px
+- **Tablet:** 768px - 1024px
+- **Desktop:** > 1024px
+- **Large Desktop:** > 1280px
+
+## 🐛 Troubleshooting
+
+### Common Issues
+
+**Port already in use?**
+
+```bash
+npm run dev -- --port 3001
+# Or
+yarn dev -- --port 3001
+# Or 
+pnpm dev -- --port 3001
+# Or
+bun dev -- --port 3001
+```
+
+**Build errors?**
+
+```bash
+npm run lint
+# Or
+yarn lint
+# Or
+pnpm lint
+# Or
+bun lint
+
+npm run type-check
+# Or
+yarn type-check
+# Or
+pnpm type-check
+# Or
+bun type-check
+```
+
+**Styling issues?**
+Make sure Tailwind CSS is properly configured and all classes are available.
+
+## 🤝 Support
+
+- 📧 Email: [rifkycorp@gmail.com]
+- 🛒 Market: [https://rifky59.gumroad.com]
+
+---
+
+**Made with ❤️ for the SaaS community**
+
+_Whether you're launching your next SaaS product or learning modern web development, this template is the first step to creating professional, high-converting landing pages in minutes, not weeks. Perfect for entrepreneurs, developers, and students looking to build something extraordinary._
