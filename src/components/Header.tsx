@@ -12,6 +12,12 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 items-center justify-between px-10">
         <div className="flex items-center space-x-2">
+          {/* <img
+              src={`/logo.png`}
+              alt="logo"
+              width={80}
+              height={80}
+            /> */}
           <div className="h-8 w-8 bg-gradient-primary rounded-lg"></div>
           <span className="text-xl font-bold">SaaSify</span>
         </div>

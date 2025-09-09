@@ -220,8 +220,10 @@ This template is licensed for commercial use. Each purchase includes:
 
 ## 🤝 Support
 
-- 📧 Email: [rifkycorp@gmail.com]
-- 🛒 Market: [https://rifky59.gumroad.com]
+- 📧 **Email Support:** rifkycorp@gmail.com
+- 🛒 **Purchase:** [https://rifky59.gumroad.com](https://rifky59.gumroad.com)
+- 📖 **Next.js Documentation:** [https://nextjs.org/docs](https://nextjs.org/docs)
+- 🎨 **Tailwind CSS Guide:** [https://tailwindcss.com/docs](https://tailwindcss.com/docs)
 
 ---
 
