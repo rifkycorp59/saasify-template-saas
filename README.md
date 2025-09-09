@@ -7,7 +7,7 @@ A modern, responsive, and conversion-optimized landing page template built with 
 - **🎨 Modern Design** - Clean, professional, and conversion-focused design
 - **📱 Fully Responsive** - Optimized for all devices and screen sizes
 - **⚡ Lightning Fast** - Built with Next.js 15 and optimized for performance
-- **🔍 SEO Optimized** - Pre-configured meta tags and structured data
+- **🔍 SEO Optimized** - Pre-configured meta data
 - **🎯 Conversion Ready** - Strategic CTA placement and user flow optimization
 - **🌙 Dark Mode Support** - Toggle between light and dark themes
 - **🛠 Easy to Customize** - Well-structured code and comprehensive documentation
