@@ -210,6 +210,14 @@ bun type-check
 **Styling issues?**
 Make sure Tailwind CSS is properly configured and all classes are available.
 
+## 📄 License
+
+This template is licensed for commercial use. Each purchase includes:
+- ✅ Use in unlimited personal projects
+- ✅ Use in unlimited commercial projects
+- ✅ Modify and customize as needed
+- ❌ Resell or redistribute the template
+
 ## 🤝 Support
 
 - 📧 Email: [rifkycorp@gmail.com]
