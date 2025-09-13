@@ -6,6 +6,7 @@ import {
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { marked } from "marked";
+import Link from "next/link";
 
 import { GetDataFAQ, GetDataHeroSection, GetDataGLobal } from "@/lib/fetch";
 import { FAQ, HeroSection, Global } from "@/lib/interface";
@@ -84,11 +85,11 @@ export default async function FAQSection() {
 
         <div className="text-center mt-12">
           <p className="text-muted-foreground mb-4">Still have questions?</p>
-          <a href={urlCta.link_contact_sale}>
+          <Link href={urlCta.link_contact_sale}>
             <Button variant="hero" className="dark:text-white cursor-pointer">
               Contact Support
             </Button>
-          </a>
+          </Link>
         </div>
       </div>
     </section>

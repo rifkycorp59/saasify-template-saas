@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import Link from "next/link";
 
 import { Navbar } from "@/lib/interface";
 
@@ -34,27 +35,27 @@ export default function HeaderContent({ data }: NavbarProps) {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
           {data.menu.map((item, index) => (
-            <a
+            <Link
               key={index}
               href={item.link}
               className="text-muted-foreground hover:text-foreground transition-smooth"
             >
               {item.name}
-            </a>
+            </Link>
           ))}
         </nav>
 
         <div className="flex items-center space-x-4">
           <ThemeToggle />
           <div className="hidden md:flex items-center space-x-2">
-            <a href={data.link_sign}>
+            <Link href={data.link_sign_in}>
               <Button variant="ghost" className="cursor-pointer">Sign In</Button>
-            </a>
-            <a href={data.link_sign_up}>
+            </Link>
+            <Link href={data.link_sign_up}>
               <Button variant="hero" size="sm" className="cursor-pointer">
                 Get Started
               </Button>
-            </a>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -79,21 +80,21 @@ export default function HeaderContent({ data }: NavbarProps) {
           <nav className="container mx-auto px-10 py-4 space-y-4">
             <div className="flex flex-col items-center space-y-4">
             {data.menu.map((item, index) => (
-              <a
+              <Link
                 key={index}
                 href={item.link}
                 className="text-muted-foreground hover:text-foreground transition-smooth"
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
             </div>
             <div className="flex flex-col space-y-2 pt-4 border-t">
               <Button variant="ghost" className="dark:text-white">
-                <a href={data.link_sign}>Sign In</a>
+                <Link href={data.link_sign_in}>Sign In</Link>
               </Button>
               <Button variant="hero">
-                <a href={data.link_sign_up}>Get Started</a>
+                <Link href={data.link_sign_up}>Get Started</Link>
               </Button>
             </div>
           </nav>

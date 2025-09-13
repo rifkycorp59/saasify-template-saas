@@ -5,7 +5,7 @@ export interface Navbar {
     url: string;
   };
   name_saas: string;
-  link_sign: string;
+  link_sign_in: string;
   link_sign_up: string;
   menu: {
     name: string;

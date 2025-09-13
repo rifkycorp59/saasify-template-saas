@@ -2,6 +2,7 @@ import { marked } from "marked";
 
 import { GetDataCTA, GetDataGLobal } from "@/lib/fetch";
 import { CTAType } from "@/lib/interface";
+import Link from "next/link";
 
 interface LinkCta {
   link_contact_sale: string;
@@ -38,7 +39,7 @@ export default async function CTA() {
 
           {/* CTA buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 animate-scale-in">
-            <a href={urlCta.link_free_trial}>
+            <Link href={urlCta.link_free_trial}>
               <button className="group bg-white text-primary font-semibold px-8 py-4 rounded-lg hover:bg-white/90 transition-smooth shadow-elegant hover:shadow-glow hover:scale-105 cursor-pointer">
                 <span className="flex items-center gap-2">
                   Start Free Trial
@@ -57,9 +58,9 @@ export default async function CTA() {
                   </svg>
                 </span>
               </button>
-            </a>
+            </Link>
 
-            <a href={urlCta.link_contact_sale}>
+            <Link href={urlCta.link_contact_sale}>
               <button className="group bg-transparent border-2 border-white text-white font-semibold px-8 py-4 rounded-lg hover:bg-white hover:text-primary transition-smooth cursor-pointer">
                 <span className="flex items-center gap-2">
                   <svg
@@ -78,7 +79,7 @@ export default async function CTA() {
                   Contact Sales
                 </span>
               </button>
-            </a>
+            </Link>
           </div>
 
           {/* Trust indicators */}

@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import DynamicSVG from "./ui/icon-inline";
+import Link from "next/link";
 
 import { GetDataFooter } from "@/lib/fetch";
 import { FooterType } from "@/lib/interface";
@@ -48,13 +49,13 @@ export default async function Footer() {
             <h4 className="font-semibold">Product</h4>
             <nav className="flex flex-col space-y-2">
               {data.products.map((item, index) => (
-                <a
+                <Link
                   key={index}
                   href={item.link}
                   className="text-muted-foreground hover:text-foreground transition-smooth"
                 >
                   {item.name}
-                </a>
+                </Link>
               ))}
             </nav>
           </div>
@@ -64,13 +65,13 @@ export default async function Footer() {
             <h4 className="font-semibold">Company</h4>
             <nav className="flex flex-col space-y-2">
               {data.company.map((item, index) => (
-                <a
+                <Link
                   key={index}
                   href={item.link}
                   className="text-muted-foreground hover:text-foreground transition-smooth"
                 >
                   {item.name}
-                </a>
+                </Link>
               ))}
             </nav>
           </div>
@@ -98,13 +99,13 @@ export default async function Footer() {
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             {data.legal_link.map((item, index) => (
-              <a
+              <Link
                 key={index}
                 href={item.link}
                 className="text-sm text-muted-foreground hover:text-foreground transition-smooth"
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
           </div>
         </div>

@@ -110,7 +110,10 @@ export default function RootLayout({
               <Header />
               {children}
               <Footer />
-              <GlobalColorPicker />
+
+              {/* Disable this if dont want use color picker */}
+              <GlobalColorPicker /> 
+              
               <Toaster />
             </TooltipProvider>
           </ColorThemeProvider>

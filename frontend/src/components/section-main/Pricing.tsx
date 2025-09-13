@@ -8,13 +8,14 @@ import {
 } from "@/components/ui/card";
 import { Check, Star } from "lucide-react";
 import { marked } from "marked";
+import Link from "next/link";
 
 import {
   GetDataServices,
   GetDataHeroSection,
   GetDataGLobal,
 } from "@/lib/fetch";
-import { Services, HeroSection, Global } from "@/lib/interface";
+import { Services, HeroSection } from "@/lib/interface";
 
 interface LinkCta {
   link_contact_sale: string;
@@ -105,7 +106,7 @@ export default async function Pricing() {
                   ))}
                 </ul>
 
-                <a
+                <Link
                   href={
                     plan.isStartFree
                       ? urlCta.link_free_trial
@@ -119,7 +120,7 @@ export default async function Pricing() {
                   >
                     {plan.isStartFree ? "Start Free Trial" : "Get Started"}
                   </Button>
-                </a>
+                </Link>
               </CardContent>
             </Card>
           ))}
@@ -129,11 +130,11 @@ export default async function Pricing() {
           <p className="text-muted-foreground mb-4">
             All plans include a 14-day free trial. No credit card required.
           </p>
-          <a href={urlCta.link_contact_sale}>
+          <Link href={urlCta.link_contact_sale}>
             <Button variant="ghost" className="dark:text-white cursor-pointer">
               Need a custom plan? Contact Sales →
             </Button>
-          </a>
+          </Link>
         </div>
       </div>
     </section>
