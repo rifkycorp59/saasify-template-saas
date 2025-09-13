@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import { ArrowRight, Play } from "lucide-react";
 
 export function Hero() {
@@ -25,9 +26,7 @@ export function Hero() {
                 <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight">
                   Scale Your Business
                   <br />
-                  <span className="text-gradient-primary">
-                    Beyond Limits
-                  </span>
+                  <span className="text-gradient-primary">Beyond Limits</span>
                 </h1>
                 <p className="text-xl text-muted-foreground max-w-2xl">
                   Transform your workflow with our cutting-edge SaaS platform.
@@ -37,18 +36,26 @@ export function Hero() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button variant="hero" size="xl" className="group dark:text-white">
-                  Get Started Free
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Button>
-                <Button
-                  variant="outline"
-                  size="xl"
-                  className="group bg-gradient"
-                >
-                  <Play className="mr-2 h-4 w-4" />
-                  Watch Demo
-                </Button>
+                <Link href="/">
+                  <Button
+                    variant="hero"
+                    size="xl"
+                    className="group dark:text-white cursor-pointer"
+                  >
+                    Get Started Free
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Button>
+                </Link>
+                <Link href="/">
+                  <Button
+                    variant="outline"
+                    size="xl"
+                    className="group bg-gradient cursor-pointer"
+                  >
+                    <Play className="mr-2 h-4 w-4" />
+                    Watch Demo
+                  </Button>
+                </Link>
               </div>
 
               <div className="flex items-center space-x-8 text-sm text-muted-foreground">

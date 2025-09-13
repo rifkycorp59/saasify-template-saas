@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import Link from "next/link";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -24,39 +25,45 @@ export function Header() {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          <a
+          <Link
             href="#features"
             className="text-muted-foreground hover:text-foreground transition-smooth"
           >
             Features
-          </a>
-          <a
+          </Link>
+          <Link
             href="#testimonials"
             className="text-muted-foreground hover:text-foreground transition-smooth"
           >
             Testimonials
-          </a>
-          <a
+          </Link>
+          <Link
             href="#pricing"
             className="text-muted-foreground hover:text-foreground transition-smooth"
           >
             Pricing
-          </a>
-          <a
+          </Link>
+          <Link
             href="#faq"
             className="text-muted-foreground hover:text-foreground transition-smooth"
           >
             FAQ
-          </a>
+          </Link>
         </nav>
 
         <div className="flex items-center space-x-4">
           <ThemeToggle />
           <div className="hidden md:flex items-center space-x-2">
-            <Button variant="ghost">Sign In</Button>
-            <Button variant="hero" size="sm">
-              Get Started
-            </Button>
+            <Link href="/">
+              <Button variant="ghost" className="cursor-pointer">
+                Sign In
+              </Button>
+            </Link>
+            <Link href="/">
+              <Button variant="hero" size="sm" className="cursor-pointer">
+                Get Started
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -80,36 +87,43 @@ export function Header() {
         <div className="md:hidden border-t bg-background">
           <nav className="container mx-auto px-10 py-4 space-y-4">
             <div className="flex flex-col space-y-4">
-              <a
+              <Link
                 href="#features"
                 className="block text-muted-foreground hover:text-foreground transition-smooth"
               >
                 Features
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#testimonials"
                 className="block text-muted-foreground hover:text-foreground transition-smooth"
               >
                 Testimonials
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#pricing"
                 className="block text-muted-foreground hover:text-foreground transition-smooth"
               >
                 Pricing
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#faq"
                 className="block text-muted-foreground hover:text-foreground transition-smooth"
               >
                 FAQ
-              </a>
+              </Link>
             </div>
             <div className="flex flex-col space-y-2 pt-4 border-t">
-              <Button variant="ghost" className="dark:text-white">
-                Sign In
-              </Button>
-              <Button variant="hero">Get Started</Button>
+              <Link href="/">
+                <Button
+                  variant="ghost"
+                  className="dark:text-white cursor-pointer"
+                >
+                  Sign In
+                </Button>
+              </Link>
+              <Link href="/">
+                <Button variant="hero">Get Started</Button>
+              </Link>
             </div>
           </nav>
         </div>

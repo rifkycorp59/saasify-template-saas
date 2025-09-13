@@ -1,6 +1,13 @@
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Check, Star } from "lucide-react"
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import Link from "next/link";
+import { Check, Star } from "lucide-react";
 
 const plans = [
   {
@@ -48,7 +55,7 @@ const plans = [
     ],
     popular: false,
   },
-]
+];
 
 export function Pricing() {
   return (
@@ -61,21 +68,20 @@ export function Pricing() {
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
             Simple, transparent
             <br />
-            <span className="text-gradient-primary">
-              pricing for everyone
-            </span>
+            <span className="text-gradient-primary">pricing for everyone</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Choose the perfect plan for your business. Upgrade or downgrade at any time.
+            Choose the perfect plan for your business. Upgrade or downgrade at
+            any time.
           </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {plans.map((plan, index) => (
-            <Card 
+            <Card
               key={plan.name}
               className={`relative card-gradient border-0 transition-smooth hover:shadow-elegant animate-fade-in ${
-                plan.popular ? 'glow-effect scale-105' : ''
+                plan.popular ? "glow-effect scale-105" : ""
               }`}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
@@ -87,16 +93,18 @@ export function Pricing() {
                   </div>
                 </div>
               )}
-              
+
               <CardHeader className="text-center pb-8">
                 <CardTitle className="text-2xl">{plan.name}</CardTitle>
-                <CardDescription className="text-base">{plan.description}</CardDescription>
+                <CardDescription className="text-base">
+                  {plan.description}
+                </CardDescription>
                 <div className="mt-4">
                   <span className="text-4xl font-bold">${plan.price}</span>
                   <span className="text-muted-foreground">/month</span>
                 </div>
               </CardHeader>
-              
+
               <CardContent className="space-y-6">
                 <ul className="space-y-3">
                   {plan.features.map((feature) => (
@@ -106,14 +114,16 @@ export function Pricing() {
                     </li>
                   ))}
                 </ul>
-                
-                <Button 
-                  className="w-full dark:text-white" 
-                  variant={plan.popular ? "hero" : "outline"}
-                  size="lg"
-                >
-                  {plan.popular ? "Start Free Trial" : "Get Started"}
-                </Button>
+
+                <Link href="/">
+                  <Button
+                    className="w-full dark:text-white cursor-pointer"
+                    variant={plan.popular ? "hero" : "outline"}
+                    size="lg"
+                  >
+                    {plan.popular ? "Start Free Trial" : "Get Started"}
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
           ))}
@@ -123,11 +133,13 @@ export function Pricing() {
           <p className="text-muted-foreground mb-4">
             All plans include a 14-day free trial. No credit card required.
           </p>
-          <Button variant="ghost" className="dark:text-white">
-            Need a custom plan? Contact Sales →
-          </Button>
+          <Link href="/">
+            <Button variant="ghost" className="dark:text-white cursor-pointer">
+              Need a custom plan? Contact Sales →
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
-  )
+  );
 }

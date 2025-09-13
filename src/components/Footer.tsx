@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import Link from "next/link";
 import { Github, Twitter, Linkedin, Mail } from "lucide-react";
 
 export function Footer() {
@@ -24,18 +25,26 @@ export function Footer() {
               beyond limits with intelligent automation and insights.
             </p>
             <div className="flex space-x-4">
-              <Button variant="ghost" size="icon">
-                <Twitter className="h-4 w-4" />
-              </Button>
-              <Button variant="ghost" size="icon">
-                <Github className="h-4 w-4" />
-              </Button>
-              <Button variant="ghost" size="icon">
-                <Linkedin className="h-4 w-4" />
-              </Button>
-              <Button variant="ghost" size="icon">
-                <Mail className="h-4 w-4" />
-              </Button>
+              <Link href="/">
+                <Button variant="ghost" size="icon" className="cursor-pointer">
+                  <Twitter className="h-4 w-4" />
+                </Button>
+              </Link>
+              <Link href="/">
+                <Button variant="ghost" size="icon" className="cursor-pointer">
+                  <Github className="h-4 w-4" />
+                </Button>
+              </Link>
+              <Link href="/">
+                <Button variant="ghost" size="icon" className="cursor-pointer">
+                  <Linkedin className="h-4 w-4" />
+                </Button>
+              </Link>
+              <Link href="/">
+                <Button variant="ghost" size="icon" className="cursor-pointer">
+                  <Mail className="h-4 w-4" />
+                </Button>
+              </Link>
             </div>
           </div>
 
@@ -43,30 +52,30 @@ export function Footer() {
           <div className="space-y-4">
             <h4 className="font-semibold">Product</h4>
             <nav className="flex flex-col space-y-2">
-              <a
+              <Link
                 href="#"
                 className="text-muted-foreground hover:text-foreground transition-smooth"
               >
                 Features
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#"
                 className="text-muted-foreground hover:text-foreground transition-smooth"
               >
                 Integrations
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#"
                 className="text-muted-foreground hover:text-foreground transition-smooth"
               >
                 API
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#"
                 className="text-muted-foreground hover:text-foreground transition-smooth"
               >
                 Security
-              </a>
+              </Link>
             </nav>
           </div>
 
@@ -74,30 +83,30 @@ export function Footer() {
           <div className="space-y-4">
             <h4 className="font-semibold">Company</h4>
             <nav className="flex flex-col space-y-2">
-              <a
+              <Link
                 href="#"
                 className="text-muted-foreground hover:text-foreground transition-smooth"
               >
                 About
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#"
                 className="text-muted-foreground hover:text-foreground transition-smooth"
               >
                 Blog
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#"
                 className="text-muted-foreground hover:text-foreground transition-smooth"
               >
                 Careers
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#"
                 className="text-muted-foreground hover:text-foreground transition-smooth"
               >
                 Contact
-              </a>
+              </Link>
             </nav>
           </div>
 
@@ -123,24 +132,24 @@ export function Footer() {
             © 2024 SaaSify. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <a
+            <Link
               href="#"
               className="text-sm text-muted-foreground hover:text-foreground transition-smooth"
             >
               Privacy Policy
-            </a>
-            <a
+            </Link>
+            <Link
               href="#"
               className="text-sm text-muted-foreground hover:text-foreground transition-smooth"
             >
               Terms of Service
-            </a>
-            <a
+            </Link>
+            <Link
               href="#"
               className="text-sm text-muted-foreground hover:text-foreground transition-smooth"
             >
               Cookie Policy
-            </a>
+            </Link>
           </div>
         </div>
       </div>
