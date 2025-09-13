@@ -99,7 +99,10 @@ export default function RootLayout({
           <ColorThemeProvider>
             <TooltipProvider>
               {children}
-              <GlobalColorPicker />
+
+              {/* Disable this if dont want use color picker */}
+              <GlobalColorPicker /> 
+
               <Toaster />
             </TooltipProvider>
           </ColorThemeProvider>
